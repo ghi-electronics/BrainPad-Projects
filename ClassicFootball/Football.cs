@@ -18,10 +18,9 @@ using System.Text;
 using System.Threading;
 
 namespace ClassicFootball {
-
     class Football {
 
-        static public void Run() {
+        static public void Run(bool sound) {
 
             int player1Score = 0;
             int player2Score = 0;
@@ -32,10 +31,11 @@ namespace ClassicFootball {
             int seconds = 0;
             int minutes = 5;
             bool pastMidField = false;
-            int possession = 1; //Which player has the ball
+            //Which player has the ball
+            int possession = 1; 
 
-            Player player = new Player(13,42);
-            
+            Player player = new Player(13, 42);
+
             DefensePlayer def1 = new DefensePlayer(46, 32);
 
             DefensePlayer def2 = new DefensePlayer(46, 42);
@@ -45,21 +45,24 @@ namespace ClassicFootball {
             DefensePlayer def4 = new DefensePlayer(68, 42);
 
             DefensePlayer def5 = new DefensePlayer(101, 42);
-            
+
             drawField();
 
             drawScoreBoard();
 
             BrainPad.Display.DrawCircle(13, player.getY(), 2);
 
-            touchDownSong();
+            if (sound) {
+                touchDownSong();
+            }
+
             //The offset is used in Clear player circle from the radius center.
             int offset = 2;
 
             while (true) {
-                
+
                 if (BrainPad.Buttons.IsUpPressed()) {
-                    BrainPad.Display.ClearPartOfScreen(player.getX()-offset, player.getY() - offset, 6, 5);
+                    BrainPad.Display.ClearPartOfScreen(player.getX() - offset, player.getY() - offset, 6, 5);
 
                     BrainPad.Display.ShowOnScreen();
 
@@ -83,15 +86,15 @@ namespace ClassicFootball {
                         player.setY(52);
                     }
 
-                    drawPlayerPosition();                   
+                    drawPlayerPosition();
                 }
 
                 if (BrainPad.Buttons.IsRightPressed()) {
                     BrainPad.Display.ClearPartOfScreen(player.getX() - offset, player.getY() - offset, 6, 5);
-                    
+
                     player.setX(player.getX() + 11);
 
-                    if (pastMidField) { 
+                    if (pastMidField) {
                         yardLine = yardLine - 1;
 
                         drawPlayerPosition();
@@ -103,33 +106,33 @@ namespace ClassicFootball {
 
                         drawPlayerPosition();
                     }
-                        
+
                     YTG = YTG - 1;
-                    if (YTG <= 0) {                      
+                    if (YTG <= 0) {
                         YTG = 0;
                     }
-                        drawScoreBoard();
+                    drawScoreBoard();
 
-                    //Returns the Player to the otherside of the off the field
+                    //Returns the Player to the otherside of the of the field
                     if (player.getX() >= 110) {
-                        BrainPad.Display.ClearPartOfScreen(player.getX()-offset,player.getY()-offset,6,5);
+                        BrainPad.Display.ClearPartOfScreen(player.getX() - offset, player.getY() - offset, 6, 5);
 
                         BrainPad.Display.ShowOnScreen();
 
                         player.setX(13);
 
                         drawPlayerPosition();
-                    }             
+                    }
                 }
 
                 if (BrainPad.Buttons.IsLeftPressed()) {
-                    BrainPad.Display.ClearPartOfScreen(player.getX()-offset, player.getY()-offset, 6, 5);
+                    BrainPad.Display.ClearPartOfScreen(player.getX() - offset, player.getY() - offset, 6, 5);
 
                     BrainPad.Display.ShowOnScreen();
 
                     player.setX(player.getX() - 11);
 
-                    if (pastMidField) { 
+                    if (pastMidField) {
                         yardLine = yardLine + 1;
 
                         drawPlayerPosition();
@@ -140,12 +143,12 @@ namespace ClassicFootball {
                         yardLine = yardLine - 1;
 
                         drawPlayerPosition();
-                    }                  
+                    }
 
                     YTG = YTG + 1;
 
                     if (YTG <= 0) {
-                        
+
                         YTG = 0;
                     }
 
@@ -158,33 +161,38 @@ namespace ClassicFootball {
                         player.setX(13);
                     }
 
-                    drawPlayerPosition();                 
+                    drawPlayerPosition();
                 }
                 isPlayerTackled();
 
                 drawDefensePositions();
 
                 isPlayerTackled();
-              
+
                 drawGameClock();
 
-                milliseconds++;       
+                milliseconds++;
             }
 
-            void drawPlayerPosition() {
+            void drawPlayerPosition()
+            {
                 BrainPad.Display.DrawCircle(player.getX(), player.getY(), 2);
-                
+
                 BrainPad.Display.ShowOnScreen();
             }
 
-            void drawDefensePositions() {
+            void drawDefensePositions()
+            {
                 BrainPad.Wait.Milliseconds(10);
 
                 Random rndDefensePlayer = new Random();
 
                 Random defenseMove = new Random();
 
-                BrainPad.Buzzer.StartBuzzing(36.71);
+
+                if (sound) {
+                    BrainPad.Buzzer.StartBuzzing(36.71);
+                }
 
                 int DefensePlayer = rndDefensePlayer.Next(5);
 
@@ -603,8 +611,9 @@ namespace ClassicFootball {
                 BrainPad.Display.ShowOnScreen();
             }
 
-            void checkForTouchDown() {
-                if(pastMidField && yardLine <= 0) {
+            void checkForTouchDown()
+            {
+                if (pastMidField && yardLine <= 0) {
 
                     if (possession == 1) {
                         player1Score = player1Score + 7;
@@ -633,7 +642,9 @@ namespace ClassicFootball {
 
                         BrainPad.Display.ShowOnScreen();
 
-                        touchDownSong();
+                        if (sound) {
+                            touchDownSong();
+                        }
 
                         possession = 2;
 
@@ -672,7 +683,9 @@ namespace ClassicFootball {
 
                         BrainPad.Display.ShowOnScreen();
 
-                        touchDownSong();
+                        if (sound) {
+                            touchDownSong();
+                        }
 
                         possession = 1;
 
@@ -688,80 +701,82 @@ namespace ClassicFootball {
                 }
             }
 
-            void kickOff() {               
-                    Random rnd = new Random();
+            void kickOff()
+            {
+                Random rnd = new Random();
 
-                    int num = rnd.Next(6);
+                int num = rnd.Next(6);
 
-                    switch (num) {
+                switch (num) {
 
-                        case 0:
-                            yardLine = 5;
-                            down = 1;
-                            YTG = 10;
-                            pastMidField = false;
-                            break;
+                    case 0:
+                        yardLine = 5;
+                        down = 1;
+                        YTG = 10;
+                        pastMidField = false;
+                        break;
 
-                        case 1:
-                            yardLine = 10;
-                            down = 1;
-                            YTG = 10;
-                            pastMidField = false;
-                            break;
+                    case 1:
+                        yardLine = 10;
+                        down = 1;
+                        YTG = 10;
+                        pastMidField = false;
+                        break;
 
-                        case 2:
-                            yardLine = 15;
-                            down = 1;
-                            YTG = 10;
-                            pastMidField = false;
-                            break;
+                    case 2:
+                        yardLine = 15;
+                        down = 1;
+                        YTG = 10;
+                        pastMidField = false;
+                        break;
 
-                        case 3:
-                            yardLine = 20;
-                            down = 1;
-                            YTG = 10;
-                            pastMidField = false;
-                            break;
+                    case 3:
+                        yardLine = 20;
+                        down = 1;
+                        YTG = 10;
+                        pastMidField = false;
+                        break;
 
-                        case 4:
-                            yardLine = 25;
-                            down = 1;
-                            YTG = 10;
-                            pastMidField = false;
-                            break;
+                    case 4:
+                        yardLine = 25;
+                        down = 1;
+                        YTG = 10;
+                        pastMidField = false;
+                        break;
 
-                        case 5:
-                            yardLine = 30;
-                            down = 1;
-                            YTG = 10;
-                            pastMidField = false;
-                            break;
+                    case 5:
+                        yardLine = 30;
+                        down = 1;
+                        YTG = 10;
+                        pastMidField = false;
+                        break;
 
-                        case 6:
-                            yardLine = 35;
-                            down = 1;
-                            YTG = 10;
-                            pastMidField = false;
-                            break;
+                    case 6:
+                        yardLine = 35;
+                        down = 1;
+                        YTG = 10;
+                        pastMidField = false;
+                        break;
 
-                    }
+                }
 
-                    BrainPad.Display.ClearScreen();
+                BrainPad.Display.ClearScreen();
 
-                    drawScoreBoard();
+                drawScoreBoard();
 
-                    drawGameClock();
+                drawGameClock();
 
-                    drawField();
+                drawField();
 
-                    resetPlay();
+                resetPlay();
 
-                    drawPlayerPosition();
+                drawPlayerPosition();
 
-                    drawDefensePositions();             
+                drawDefensePositions();
             }
 
-            void tryFieldGoal() {
+            void tryFieldGoal()
+            {
 
                 Random rnd = new Random();
 
@@ -773,7 +788,7 @@ namespace ClassicFootball {
 
                 int num = rnd.Next(yardLine);
 
-                if (num<=10 && pastMidField) {
+                if (num <= 10 && pastMidField) {
                     //90%
                     int num2 = rnd.Next(10);
 
@@ -786,7 +801,7 @@ namespace ClassicFootball {
                         fieldGoalNoGood();
                     }
                 }
-                else if(num>=11 && num <= 20 && pastMidField) {
+                else if (num >= 11 && num <= 20 && pastMidField) {
                     //80%
                     int num2 = rnd.Next(10);
 
@@ -852,12 +867,15 @@ namespace ClassicFootball {
                 }
             }
 
-            void fieldGoalGood() {
-                BrainPad.Display.DrawText(10,35, "It's Good");
+            void fieldGoalGood()
+            {
+                BrainPad.Display.DrawText(10, 35, "It's Good");
 
                 BrainPad.Display.ShowOnScreen();
 
-                touchDownSong();
+                if (sound) {
+                    touchDownSong();
+                }
 
                 if (possession == 1) {
                     player1Score = player1Score + 3;
@@ -865,7 +883,7 @@ namespace ClassicFootball {
                     down = 1;
                     YTG = 10;
 
-                    kickOff();                   
+                    kickOff();
                 }
 
                 else {
@@ -874,24 +892,27 @@ namespace ClassicFootball {
                     down = 1;
                     YTG = 10;
 
-                    kickOff();                    
+                    kickOff();
                 }
             }
 
-            void fieldGoalNoGood() {
+            void fieldGoalNoGood()
+            {
                 BrainPad.Display.DrawText(28, 35, "No Good!");
 
                 BrainPad.Display.ShowOnScreen();
 
-                BrainPad.Buzzer.StartBuzzing(100);
+                if (sound) {
+                    BrainPad.Buzzer.StartBuzzing(100);
 
-                BrainPad.Wait.Milliseconds(50);
+                    BrainPad.Wait.Milliseconds(50);
 
-                BrainPad.Buzzer.StartBuzzing(50);
+                    BrainPad.Buzzer.StartBuzzing(50);
 
-                BrainPad.Wait.Milliseconds(200);
+                    BrainPad.Wait.Milliseconds(200);
 
-                BrainPad.Buzzer.StopBuzzing();
+                    BrainPad.Buzzer.StopBuzzing();
+                }
 
                 BrainPad.Wait.Seconds(2);
 
@@ -911,10 +932,11 @@ namespace ClassicFootball {
                 down = 1;
                 YTG = 10;
 
-                drawField();   
+                drawField();
             }
 
-            void drawScoreBoard() {
+            void drawScoreBoard()
+            {
                 //Clears PlayerOne Score
                 BrainPad.Display.ClearPartOfScreen(6, 4, 10, 10);
                 //Clears PlayerTwo Score
@@ -962,7 +984,7 @@ namespace ClassicFootball {
                     //PlayerTwo Score 2 digit number
                     BrainPad.Display.DrawNumber(103, 4, player2Score);
                 }
-                
+
                 //DownMarker
                 BrainPad.Display.DrawScaledText(35, 8, "" + down, 2, 1);
 
@@ -996,78 +1018,54 @@ namespace ClassicFootball {
                     BrainPad.Display.DrawScaledText(59, 12, "0" + yardLine, 1, 1);
                 }
                 else
-                BrainPad.Display.DrawScaledText(59, 12, "" + yardLine, 1, 1);
+                    BrainPad.Display.DrawScaledText(59, 12, "" + yardLine, 1, 1);
 
                 BrainPad.Display.DrawScaledText(35, 8, "" + down, 2, 1);
 
                 //Yards to go
                 if (YTG >= 10)
                     BrainPad.Display.DrawScaledText(84, 8, "" + YTG, 1, 1);
-                else 
+                else
                     BrainPad.Display.DrawScaledText(87, 8, "" + YTG, 1, 1);
-            
+
                 BrainPad.Display.ShowOnScreen();
             }
 
-            void isPlayerTackled() {
+            void isPlayerTackled()
+            {
                 if (player.getX() == def1.getX() && player.getY() == def1.getY()) {
-                    blowWhistle();
-
-                    down = down + 1;
-
-                    checkDown();
-
-                    drawScoreBoard();
-
-                    resetPlay();
+                    endPlay();
                 }
                 else if (player.getX() == def2.getX() && player.getY() == def2.getY()) {
-                    down = down + 1;
-
-                    blowWhistle();
-
-                    checkDown();
-
-                    drawScoreBoard();
-
-                    resetPlay();
+                    endPlay();
                 }
                 else if (player.getX() == def3.getX() && player.getY() == def3.getY()) {
-                    down = down + 1;
-
-                    blowWhistle();
-                   
-                    checkDown();
-
-                    drawScoreBoard();
-
-                    resetPlay();
+                    endPlay();
                 }
                 else if (player.getX() == def4.getX() && player.getY() == def4.getY()) {
-                    down = down + 1;
-
-                    blowWhistle();
-                   
-                    checkDown();
-
-                    drawScoreBoard();
-
-                    resetPlay();
+                    endPlay();
                 }
-                else if (player.getX() == def5.getX() && player.getY() == def5.getY()) {                  
-                    down = down + 1;
-
-                    blowWhistle();
-
-                    checkDown();
-
-                    drawScoreBoard();
-
-                    resetPlay();
+                else if (player.getX() == def5.getX() && player.getY() == def5.getY()) {
+                    endPlay();
                 }
             }
+            void endPlay()
+            {
+                down = down + 1;
 
-            void checkDown() {
+                if (sound) {
+                    blowWhistle();
+                }
+
+                checkDown();
+
+                drawScoreBoard();
+
+                resetPlay();
+            }
+
+            void checkDown()
+            {
                 if (YTG <= 0) {
                     YTG = 10;
                     down = 1;
@@ -1076,7 +1074,6 @@ namespace ClassicFootball {
                 if (down < 4) {
                     return;
                 }
-
                 else if (down == 4) {
                     BrainPad.Display.ClearScreen();
                     //Scoreboard
@@ -1096,13 +1093,13 @@ namespace ClassicFootball {
 
                     drawGameClock();
 
-                    BrainPad.Display.DrawSmallText(17, 30, "4th Down: "+ YTG + " YTG");
+                    BrainPad.Display.DrawSmallText(17, 30, "4th Down: " + YTG + " YTG");
 
-                    BrainPad.Display.DrawSmallText(5,50,"Punt/L Kick/U Run/R");
+                    BrainPad.Display.DrawSmallText(5, 50, "Punt/L Kick/U Run/R");
 
                     BrainPad.Display.ShowOnScreen();
 
-                    while(true){
+                    while (true) {
                         //Going for it on 4th down -- RUN
                         if (BrainPad.Buttons.IsRightPressed()) {
                             BrainPad.Display.ClearScreen();
@@ -1142,7 +1139,7 @@ namespace ClassicFootball {
                 }
                 else if (down > 4) {
 
-                    while(true){
+                    while (true) {
                         BrainPad.Display.ClearScreen();
 
                         BrainPad.Display.DrawText(25, 15, "Change");
@@ -1166,9 +1163,9 @@ namespace ClassicFootball {
                         YTG = 10;
 
                         drawField();
-                        
+
                         return;
-                    } 
+                    }
                 }
 
                 if (YTG <= 0) {
@@ -1177,7 +1174,8 @@ namespace ClassicFootball {
                 }
             }
 
-            void touchDownSong() {
+            void touchDownSong()
+            {
                 //G 196 - C 261.63 - E  329.63 - G  392 - E  329.63 - G - 392
                 BrainPad.Buzzer.StartBuzzing(196);//G
 
@@ -1206,7 +1204,8 @@ namespace ClassicFootball {
                 BrainPad.Buzzer.StopBuzzing();
             }
 
-            void blowWhistle() {
+            void blowWhistle()
+            {
                 for (int i = 0; i < 3; i++) {
                     BrainPad.Buzzer.StartBuzzing(2489.02);
 
@@ -1220,8 +1219,9 @@ namespace ClassicFootball {
                 BrainPad.Buzzer.StopBuzzing();
             }
 
-            void drawGameClock() {
-                if(minutes==0 && seconds == 0) {
+            void drawGameClock()
+            {
+                if (minutes == 0 && seconds == 0) {
 
                 }
                 else {
@@ -1249,12 +1249,13 @@ namespace ClassicFootball {
                         BrainPad.Display.DrawSmallNumber(67, 4, seconds);
                     }
                 }
-               
+
                 BrainPad.Display.ShowOnScreen();
             }
-                
-            void resetPlay() {
-                BrainPad.Display.ClearPartOfScreen(player.getX()-offset, player.getY()-offset, 6, 5);
+
+            void resetPlay()
+            {
+                BrainPad.Display.ClearPartOfScreen(player.getX() - offset, player.getY() - offset, 6, 5);
 
                 BrainPad.Display.ClearPartOfScreen(def1.getX(), def1.getY(), 4, 2);
 
@@ -1270,15 +1271,15 @@ namespace ClassicFootball {
 
                 player.setY(42);
 
-                def1.setX (46);
+                def1.setX(46);
 
-                def2.setX (46);
+                def2.setX(46);
 
-                def3.setX (46);
+                def3.setX(46);
 
-                def4.setX (68);
+                def4.setX(68);
 
-                def5.setX (101);
+                def5.setX(101);
 
                 def1.setY(32);
 
@@ -1291,7 +1292,7 @@ namespace ClassicFootball {
                 def5.setY(42);
 
                 BrainPad.Display.DrawCircle(player.getX(), player.getY(), 2);
-               
+
                 BrainPad.Display.DrawFilledRectangle(def1.getX(), def1.getY(), 4, 2);
 
                 BrainPad.Display.DrawFilledRectangle(def2.getX(), def2.getY(), 4, 2);
@@ -1307,7 +1308,8 @@ namespace ClassicFootball {
                 BrainPad.Wait.Seconds(2);
             }
 
-            bool isSpaceOpen() {
+            bool isSpaceOpen()
+            {
                 if (def1.getX() == def2.getX() && def1.getY() == def2.getY()) {
                     return false;
                 }
@@ -1351,7 +1353,8 @@ namespace ClassicFootball {
                 return true;
             }
 
-            void drawField() {
+            void drawField()
+            {
                 //OutlineField
                 BrainPad.Display.DrawLine(5, 25, 124, 25);
 
@@ -1502,7 +1505,7 @@ namespace ClassicFootball {
             }
             public void setX(int x) {
                 previousX = posX;
-                 posX= x;
+                posX = x;
             }
             public void setY(int y) {
                 previousY = posY;

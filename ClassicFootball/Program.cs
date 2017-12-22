@@ -32,7 +32,7 @@ namespace ClassicFootball {
 
                     BrainPad.Display.ShowOnScreen();
 
-                    Football.Run();
+                    Football.Run(true);
 
                     break;
                 case 2:
@@ -40,7 +40,7 @@ namespace ClassicFootball {
 
                     BrainPad.Display.ShowOnScreen();
 
-                    QuietFootball.Run();
+                    Football.Run(false);
 
                     break;
             }
