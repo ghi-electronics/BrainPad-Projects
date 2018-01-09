@@ -7,10 +7,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{3EC68525-3242-4557-87AC-8F32C912A6CD}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Classic<Import Project="packages\GHIElectronics.TinyCLR.Core.0.7.0\build\net452\GHIElectronics.TinyCLR.Core.props" Condition="Exists('packages\GHIElectronics.TinyCLR.Core.0.7.0\build\net452\GHIElectronics.TinyCLR.Core.props')" />
-  tball</RootNamespace>
-    <AssemblyName>Classic<Import Project="packages\GHIElectronics.TinyCLR.Core.0.7.0\build\net452\GHIElectronics.TinyCLR.Core.props" Condition="Exists('packages\GHIElectronics.TinyCLR.Core.0.7.0\build\net452\GHIElectronics.TinyCLR.Core.props')" />
-  tball</AssemblyName>
+    <RootNamespace>ClassicFootball</RootNamespace>
+    <AssemblyName>ClassicFootball</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -40,10 +38,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Quiet<Import Project="packages\GHIElectronics.TinyCLR.Core.0.7.0\build\net452\GHIElectronics.TinyCLR.Core.props" Condition="Exists('packages\GHIElectronics.TinyCLR.Core.0.7.0\build\net452\GHIElectronics.TinyCLR.Core.props')" />
-  tball.cs" />
-    <Compile Include="<Import Project="packages\GHIElectronics.TinyCLR.Core.0.7.0\build\net452\GHIElectronics.TinyCLR.Core.props" Condition="Exists('packages\GHIElectronics.TinyCLR.Core.0.7.0\build\net452\GHIElectronics.TinyCLR.Core.props')" />
-  tball.cs" />
+    <Compile Include="Football.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="SplashScreen.cs" />
