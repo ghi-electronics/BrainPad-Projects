@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26403.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrainTouchPiano", "BrainTouchPiano\BrainTouchPiano.csproj", "{01C72498-D9C3-4515-A54E-46E2C2B82EB8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrainTouchPiano", "BrainTouchPiano.csproj", "{01C72498-D9C3-4515-A54E-46E2C2B82EB8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
