@@ -44,7 +44,6 @@
     <Compile Include="Sketch.cs" />
     <Compile Include="SplashScreen.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

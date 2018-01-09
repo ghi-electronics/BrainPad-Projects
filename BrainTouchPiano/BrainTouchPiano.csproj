@@ -52,7 +52,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="SplashScreen.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TouchClampClick.cs" />
   </ItemGroup>
   <ItemGroup>
