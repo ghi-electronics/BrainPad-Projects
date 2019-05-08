@@ -1,6 +1,6 @@
 # Sun Seeking Robot
 ---
-![Sun Seeking Chick](images/sun-seeker.gif)
+![Sun Seeking Chick](../assets/sun-seeker.gif)
 
 **Difficulty: Moderately easy, some assembly required.**
 
@@ -8,7 +8,7 @@
 
 **Note: This project requires a two wheel drive mini robot platform and battery. More details are found at the bottom of this page.**
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/UZvxMPspZzk?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+[![Sun Seeking Chick YouTube](https://img.youtube.com/vi/UZvxMPspZzk/0.jpg)](https://www.youtube.com/watch?v=UZvxMPspZzk)
 
 ## How it Works
 A toy car is programmed to stay in the sunlight and turn any time the light sensor senses shade. Both rear wheels of the car are driven by continuous servo motors. When the program starts both motors are driving the car forward. When the light sensor detects light below a given threshold, the program will stop one of the rear wheels causing the car to turn. When the sensor once again senses the sunlight both wheels push forward. The program alternates which wheel will stop when the light sensed is below the threshold.

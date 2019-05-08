@@ -1,6 +1,6 @@
 # Pong
 ---
-![Pong](images/pong.gif)
+![Pong](../assets/pong.gif)
 
 The classic Pong game -- the grandfather of all video games! Now over 45 years old!
 
@@ -8,7 +8,7 @@ The classic Pong game -- the grandfather of all video games! Now over 45 years o
 
 **Objective: Retro gaming.**
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Sr2rzfXc9VA?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+[![Space Invasion YouTube](https://img.youtube.com/vi/Sr2rzfXc9VA/0.jpg)](https://www.youtube.com/watch?v=Sr2rzfXc9VA)
 
 ## How It Works
 Surprisingly, this very simple game requires about as much code as the [Space Invasion](space-invasion.md) game.

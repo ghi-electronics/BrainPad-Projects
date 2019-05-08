@@ -1,12 +1,12 @@
 # Space Invasion
 ---
-![Space Invasion](images/space-invasion.gif)
+![Space Invasion](../assets/space-invasion.gif)
 
 **Difficulty: Medium.**
 
 **Objective: Retro gaming.**
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/yW18vePun4c?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+[![Space Invasion YouTube](https://img.youtube.com/vi/yW18vePun4c/0.jpg)](https://www.youtube.com/watch?v=yW18vePun4c)
 
 This game was inspired by the Space Invaders game from the 80s. It is fun to play and easy to program.
 

@@ -1,6 +1,6 @@
 # Snap Circuits Lift-Off!
 ---
-![Snap Circuits](images/snap-circuits.gif)
+![Snap Circuits](../assets/snap-circuits.gif)
 
 **Difficulty: Easy.**
 
@@ -8,7 +8,7 @@
 
 **Note: This project requires an Elenco Snap Circuits kit that includes the fan blade.**
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8tVkJDCwG3w?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+[![Space Invasion YouTube](https://img.youtube.com/vi/8tVkJDCwG3w/0.jpg)](https://www.youtube.com/watch?v=8tVkJDCwG3w)
 
 ## How it Works
 

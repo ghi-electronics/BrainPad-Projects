@@ -1,6 +1,6 @@
 # Marble Sorting Robot
 ---
-![Marble Sorter](images/marble-sorter.gif)
+![Marble Sorter](../assets/marble-sorter.gif)
 
 **Difficulty: Fairly difficult. Construction required.**
 
@@ -8,7 +8,7 @@
 
 **Note: This project requires two positional servo motors and two pushbuttons. More details are found at the bottom of this page.**
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/MuRkU2dR5Cc?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+[![Space Invasion YouTube](https://img.youtube.com/vi/MuRkU2dR5Cc/0.jpg)](https://www.youtube.com/watch?v=MuRkU2dR5Cc)
 
 ## How it Works
 The BrainPad is programmed to separate black and white marbles using the light sensor, two servo motors, and two pushbuttons. The first button is used to calibrate the light sensor for the current lighting. To calibrate you must place ten marbles in the machine starting with a black marble and alternating in color. Pressing the first button will then start the calibration. The second button is used to start sorting marbles which are placed in the machine in random order.
