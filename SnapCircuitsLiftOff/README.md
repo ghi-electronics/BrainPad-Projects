@@ -1,6 +1,6 @@
 # Snap Circuits Lift-Off!
 ---
-![Snap Circuits](../assets/snap-circuits.gif)
+![Snap Circuits](assets/snap-circuits.gif)
 
 **Difficulty: Easy.**
 
@@ -46,7 +46,7 @@ forever(function () {
 
 Microsoft MakeCode block program:
 
-![Lift-off block program](../assets/lift-off-blocks.png)
+![Lift-off block program](assets/lift-off-blocks.png)
 
 ### C# Code
 
@@ -129,5 +129,5 @@ namespace ModifyThis {
 
 To build this circuit just follow the diagram below.
 
-![Snap Circuits Lift-Off](../assets/snap-circuits-lift-off.gif)
+![Snap Circuits Lift-Off](assets/snap-circuits-lift-off.gif)
 

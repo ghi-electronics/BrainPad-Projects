@@ -1,6 +1,6 @@
 # Space Force Robot
 ---
-![Space force robot](../assets/space-force.gif)
+![Space force robot](assets/space-force.gif)
 
 **Difficulty: More Difficult.**
 
@@ -42,7 +42,7 @@ forever(function () {
 
 Microsoft MakeCode block program:
 
-![SpaceForce block program](../assets/spaceforce-blocks.png)
+![SpaceForce block program](assets/spaceforce-blocks.png)
 
 ### C# Code
 > [!Tip]

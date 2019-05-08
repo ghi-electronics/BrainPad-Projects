@@ -1,6 +1,6 @@
 # Marble Sorting Robot
 ---
-![Marble Sorter](../assets/marble-sorter.gif)
+![Marble Sorter](assets/marble-sorter.gif)
 
 **Difficulty: Fairly difficult. Construction required.**
 

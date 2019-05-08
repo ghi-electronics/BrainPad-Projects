@@ -1,6 +1,6 @@
 # Pong
 ---
-![Pong](../assets/pong.gif)
+![Pong](assets/pong.gif)
 
 The classic Pong game -- the grandfather of all video games! Now over 45 years old!
 
