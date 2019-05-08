@@ -20,7 +20,7 @@ After pressing the up button on the BrainPad, the motor starts spinning and turn
 
 Click [here](https://makecode.com/_gKkcjM3KbHce) to go directly to the program on Microsoft MakeCode. There is a tutorial for building the project [here](https://makecode.brainpad.com/projects/snap-circuits). You can also copy and paste the following JavaScript code into Microsoft MakeCode's JavaScript editor.
 
-```
+```javascript
 let count = 0
 forever(function () {
     display.clear()
@@ -46,7 +46,7 @@ forever(function () {
 
 Microsoft MakeCode block program:
 
-![Lift-off block program](images/lift-off-blocks.png)
+![Lift-off block program](../assets/lift-off-blocks.png)
 
 ### C# Code
 
@@ -55,7 +55,7 @@ This C# program actually does a little more than the Microsoft MakeCode program 
 > [!Tip]
 > Make sure the namespace in your program matches your project's namespace.  Your project's namespace can be found in the BrainPad Helper file by clicking on the BrainPad1.cs tab.  [**More Info**](../go-beyond/csharp/intro.md#a-few-words-about-namespaces).
 
-```
+```csharp
 using GHIElectronics.TinyCLR.Devices.Gpio;
 
 namespace ModifyThis {
@@ -129,5 +129,5 @@ namespace ModifyThis {
 
 To build this circuit just follow the diagram below.
 
-![Snap Circuits Lift-Off](images/snap-circuits-lift-off.gif)
+![Snap Circuits Lift-Off](../assets/snap-circuits-lift-off.gif)
 

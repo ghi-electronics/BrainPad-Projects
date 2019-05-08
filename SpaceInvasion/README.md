@@ -22,7 +22,7 @@ In this game we have a loop where we process the objects we have moving on scree
 
 Once everything is processed, we `RefreshScreen`. As always, we need to add a minimum delay to give the system time to process any other internal tasks.
 
-```
+```csharp
 static void Main() {
     while(true) {
         ProcessShip();
@@ -33,7 +33,7 @@ static void Main() {
 ```
 
 We also want to draw two lines to define the area of play.
-```
+```csharp
 static void Main() {
     BrainPad.Display.DrawLine(90, 0, 90, 64);
     BrainPad.Display.DrawLine(0, 0, 0, 64);
@@ -49,7 +49,7 @@ static void Main() {
 ### Sprites
 In computer programming sprites are small pictures or objects that are shown on the screen and can be moved or manipulated as a single entity. In this game the space ship, the bullets, and the monster are all sprites. We will create a `sprite` class which will be used to keep track of each sprite's position and size. This class will also provide methods to draw it and erase it.
 
-```
+```csharp
 class Sprite {
     Picture Pic;
     public int X, Y;
@@ -75,7 +75,7 @@ class Sprite {
 ### Creating The Ship
 Let's use the Sprite class we made in the last step to create the Ship.
 
-```
+```csharp
 static Sprite Ship = new Sprite(BrainPad.Display.CreatePicture(8, 5, new byte[] {
 0,0,0,1,1,0,0,0,
 0,0,0,1,1,0,0,0,
@@ -90,7 +90,7 @@ The ship will always be at the bottom of the screen. Its Y or vertical position 
 
 We now need to check the buttons and update the ship's X (horizontal) position. We also check the X position to make sure the ship stays within the playing area.
 
-```
+```csharp
 static void ProcessShip() {
     Ship.Clear();
     if (BrainPad.Buttons.IsLeftPressed()) Ship.X -= 5;
@@ -106,7 +106,7 @@ static void ProcessShip() {
 > Make sure the namespace in your program matches your project's namespace.  Your project's namespace can be found in the BrainPad Helper file by clicking on the BrainPad1.cs tab.  [**More Info**](../go-beyond/csharp/intro.md#a-few-words-about-namespaces).
 
 Time to load the code and test it out. Here is the code so far.
-```
+```csharp
 using GHIElectronics.TinyCLR.BrainPad;
 namespace ModifyThis {
     class Sprite {
@@ -167,7 +167,7 @@ This section will add a bullet that shoots when the up button is pressed. The so
 ### Creating The Bullet
 The bullet's Y positions starts at -10, outside of the screen boundaries. This is done so the bullet will not be seen until the player shoots at the monster. The Y position of the bullet is also used to tell the program not to process it until it is fired at the monster.
 
-```
+```csharp
 static Sprite Bullet = new Sprite(BrainPad.Display.CreatePicture(2, 2, new byte[] {
     1,1,
     1,1,
@@ -179,7 +179,7 @@ The bullet will always start at the middle of the ship and will move upwards unt
 
 To generate a shooting sound, we cheat somewhat and use the Y location to generate a sweeping frequency!
 
-```
+```csharp
 static void ProcessBullet() {
     if (Bullet.Y > - 5) {
         Bullet.Clear();
@@ -200,7 +200,7 @@ static void ProcessBullet() {
 
 This is the game code so far. Things are getting more interesting!
 
-```
+```csharp
 using GHIElectronics.TinyCLR.BrainPad;
 namespace ModifyThis {
     class Sprite {
@@ -282,7 +282,7 @@ namespace ModifyThis {
 The monster (invader) will move left and right on the screen. Every time it hits the edge of the area of play it will reverse direction and descend a little, getting closer and closer to our ship.
 
 ### Creating The Monster
-```
+```csharp
 static Sprite Monster = new Sprite(BrainPad.Display.CreatePicture(8, 8, new byte[] {
     0,0,0,1,1,0,0,0,
     0,0,1,1,1,1,0,0,
@@ -295,7 +295,7 @@ static Sprite Monster = new Sprite(BrainPad.Display.CreatePicture(8, 8, new byte
     })) { X = 41 };
 ```
 ### Moving The Monster
-```
+```csharp
 static int MonsterDelta = 5;
 static void ProcessMonster() {
     Monster.Clear();
@@ -311,7 +311,7 @@ static void ProcessMonster() {
 ### Testing The Monster
 The monster will move down and go out of view off the bottom of the screen. We are not checking for collisions yet. You have to reset the BrainPad to see the monster again.
 
-```
+```csharp
 using GHIElectronics.TinyCLR.BrainPad;
 namespace ModifyThis {
     class Sprite {
@@ -416,7 +416,7 @@ namespace ModifyThis {
 Finally, we want to see if the bullet has hit our monster or if the monster has hit the player. In both cases, we want to play some cool sound effects.
 
 Check to see if bullet has hit the monster:
-```
+```csharp
 if (Bullet.X >= Monster.X && Bullet.X <= Monster.X + Monster.Width &&
             Bullet.Y >= Monster.Y && Bullet.Y <= Monster.Y + Monster.Height) {
     for (int i = 0; i < 3; i++) {
@@ -434,7 +434,7 @@ if (Bullet.X >= Monster.X && Bullet.X <= Monster.X + Monster.Width &&
 ```
 
 Or, if the monster has hit us:
-```
+```csharp
 if (Monster.Y > 40) {
     if (Ship.X > Monster.X && Ship.X < Monster.X + Ship.Width) {
         for (int f = 2000; f > 200; f -= 200) {
@@ -450,7 +450,7 @@ if (Monster.Y > 40) {
 ```
 
 ## The Complete Project
-```
+```csharp
 using GHIElectronics.TinyCLR.BrainPad;
 namespace ModifyThis {
     class Sprite {

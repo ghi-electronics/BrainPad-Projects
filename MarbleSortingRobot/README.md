@@ -17,7 +17,7 @@ The BrainPad is programmed to separate black and white marbles using the light s
 > [!Tip]
 > Make sure the namespace in your program matches your project's namespace.  Your project's namespace can be found in the BrainPad Helper file by clicking on the BrainPad1.cs tab.  [**More Info**](../go-beyond/csharp/intro.md#a-few-words-about-namespaces).
 
-```
+```csharp
 using GHIElectronics.TinyCLR.Devices.Gpio;
 
 namespace ModifyThis {

@@ -23,7 +23,7 @@ Modify the code to so tilt (the accelerometer) is used instead of buttons. Hint:
 > [!Tip]
 > Make sure the namespace in your program matches your project's namespace.  Your project's namespace can be found in the BrainPad Helper file by clicking on the BrainPad1.cs tab.  [**More Info**](../go-beyond/csharp/intro.md#a-few-words-about-namespaces).
 
-```
+```csharp
 namespace ModifyThis {
     class Program {
         static void Main() {

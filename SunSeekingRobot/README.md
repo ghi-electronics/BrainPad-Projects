@@ -18,7 +18,7 @@ A toy car is programmed to stay in the sunlight and turn any time the light sens
 ### Microsoft Makecode
 Click [here](https://makecode.com/_PFX5r3bgLcPh) to go directly to the program on Microsoft MakeCode. You can also copy and paste the following JavaScript code into Microsoft MakeCode's JavaScript editor.
 
-```
+```javascript
 let Direction = 0
 input.onLightConditionChanged(LightCondition.Dark, function () {
     if (Direction == 0) {
@@ -40,7 +40,7 @@ pins.SERVO2.servoWrite(0)
 
 Microsoft MakeCode block program:
 
-![Sun seeker block program](images/sun-seeker-blocks.png)
+![Sun seeker block program](../assets/sun-seeker-blocks.png)
 
 ## The Two Wheel Drive Mini Robot Platform
 We found our car chassis on Amazon, but they can also be found on eBay or by searching in your favorite search engine for "2WD Mini Robot Platform Kit." Make sure you get one that looks the same as the chassis in the video to assure it's compatible with the BrainPad and programs on this page.
@@ -51,4 +51,4 @@ There are many rechargeable battery packs available that are meant to power devi
 > [!Tip]
 > Make sure to push the battery towards the back of the car as far as possible. This will put more weight over the drive wheels and give the car better traction.
 
-![Sun seeking car](images/sun-seeker.jpg)
+![Sun seeking car](../assets/sun-seeker.jpg)

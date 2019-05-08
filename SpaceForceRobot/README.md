@@ -19,7 +19,7 @@ The program for this project is quite simple and code is available for both Micr
 ### Microsoft MakeCode
 Click [here](https://makecode.com/_3PMH7CidXa6A) to go directly to the program on Microsoft MakeCode. You can also copy and paste the following JavaScript code into Microsoft MakeCode's JavaScript editor.
 
-```
+```javascript
 servos.servo1.setAngle(110)
 forever(function () {
     display.showString("Place ball and ", 2)
@@ -42,13 +42,13 @@ forever(function () {
 
 Microsoft MakeCode block program:
 
-![SpaceForce block program](images/spaceforce-blocks.png)
+![SpaceForce block program](../assets/spaceforce-blocks.png)
 
 ### C# Code
 > [!Tip]
 > Make sure the namespace in your program matches your project's namespace.  Your project's namespace can be found in the BrainPad Helper file by clicking on the BrainPad1.cs tab.  [**More Info**](../go-beyond/csharp/intro.md#a-few-words-about-namespaces).
 
-```
+```csharp
 namespace ModifyThis {
     class Program {
         static void Main() {
