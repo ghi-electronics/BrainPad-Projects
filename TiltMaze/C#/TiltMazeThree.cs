@@ -34,43 +34,43 @@ namespace TiltMaze {
                     return;
 
                 if (BrainPad.Buttons.IsUpPressed()) {
-                    BrainPad.Display.ClearPartOfScreen(ball.getX(), ball.getY(), 3, 3);
+                    BrainPad.Display.ClearPart(ball.getX(), ball.getY(), 3, 3);
 
                     ball.setY(ball.getY() - 1);
 
                     BrainPad.Display.DrawRectangle(ball.getX(), ball.getY(), 3, 3);
 
-                    BrainPad.Display.ShowOnScreen();
+                    BrainPad.Display.RefreshScreen();
                 }
                     
                 if (BrainPad.Buttons.IsDownPressed()) {
-                    BrainPad.Display.ClearPartOfScreen(ball.getX(), ball.getY(), 3, 3);
+                    BrainPad.Display.ClearPart(ball.getX(), ball.getY(), 3, 3);
 
                     ball.setY(ball.getY() + 1);
 
                     BrainPad.Display.DrawRectangle(ball.getX(), ball.getY(), 3, 3);
 
-                    BrainPad.Display.ShowOnScreen();
+                    BrainPad.Display.RefreshScreen();
                 }
                     
                 if (BrainPad.Buttons.IsRightPressed()) {
-                    BrainPad.Display.ClearPartOfScreen(ball.getX(), ball.getY(), 3, 3);
+                    BrainPad.Display.ClearPart(ball.getX(), ball.getY(), 3, 3);
 
                     ball.setX(ball.getX() + 1);
 
                     BrainPad.Display.DrawRectangle(ball.getX(), ball.getY(), 3, 3);
 
-                    BrainPad.Display.ShowOnScreen();
+                    BrainPad.Display.RefreshScreen();
                 }
                     
                 if (BrainPad.Buttons.IsLeftPressed()) {
-                    BrainPad.Display.ClearPartOfScreen(ball.getX(), ball.getY(), 3, 3);
+                    BrainPad.Display.ClearPart(ball.getX(), ball.getY(), 3, 3);
 
                     ball.setX(ball.getX() - 1);
 
                     BrainPad.Display.DrawRectangle(ball.getX(), ball.getY(), 3, 3);
 
-                    BrainPad.Display.ShowOnScreen();
+                    BrainPad.Display.RefreshScreen();
                 }     
 
                 ball.checkWall();
@@ -97,7 +97,7 @@ namespace TiltMaze {
 
                 BrainPad.Display.DrawSmallNumber(101, 53, minutes);
 
-                BrainPad.Display.ShowOnScreen();
+                BrainPad.Display.RefreshScreen();
 
                 if (ball.getX() == 115 && ball.getY() <= 59 && ball.getY() >= 51) {
                     BrainPad.Display.DrawText(45, 25, minutes.ToString());
@@ -106,13 +106,13 @@ namespace TiltMaze {
 
                     BrainPad.Display.DrawText(65, 25, seconds.ToString());
 
-                    BrainPad.Display.ShowOnScreen();
+                    BrainPad.Display.RefreshScreen();
 
                     BrainPad.Wait.Seconds(5);
 
-                    BrainPad.Display.ClearScreen();
+                    BrainPad.Display.Clear();
 
-                    BrainPad.Display.ShowOnScreen();
+                    BrainPad.Display.RefreshScreen();
 
                     drawMaze();
 
@@ -122,7 +122,7 @@ namespace TiltMaze {
 
                     BrainPad.Display.DrawRectangle(ball.getX(), ball.getY(), 3, 3);
 
-                    BrainPad.Display.ShowOnScreen();
+                    BrainPad.Display.RefreshScreen();
 
                     milliseconds = 0;
                     seconds = 0;
@@ -210,7 +210,7 @@ namespace TiltMaze {
 
                 BrainPad.Display.DrawLine(75, 51, 75, 64);
 
-                BrainPad.Display.ShowOnScreen();
+                BrainPad.Display.RefreshScreen();
             }
         }
     }
