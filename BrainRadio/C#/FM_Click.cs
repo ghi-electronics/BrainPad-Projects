@@ -205,7 +205,6 @@ namespace Click.Radio {
 
             var settings = new I2cConnectionSettings(RadioFM1.I2C_ADDRESS) {
                 BusSpeed = I2cBusSpeed.FastMode,
-                SharingMode = I2cSharingMode.Shared
             };
 
 
@@ -213,7 +212,7 @@ namespace Click.Radio {
             //var aqs = I2cDevice.GetDeviceSelector("I2C1");
             //this.i2cBus = I2cDevice.FromId(aqs, settings);
 
-            this.i2cBus = I2cDevice.FromId(BrainPad.Expansion.I2cBus.I2c1, settings);
+            this.i2cBus = I2cController.FromName(BrainPadBP2.I2cBus.I2c1).GetDevice(settings);
 
             this.InitializeDevice();
 

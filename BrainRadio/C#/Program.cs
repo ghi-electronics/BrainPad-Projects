@@ -26,7 +26,7 @@ namespace BrainRadio {
             radio.Channel = currentStation;
             radio.Volume = volume;
             
-            BrainPad.Display.ClearScreen();
+            BrainPad.Display.Clear();
 
             BrainPad.Display.DrawSmallText(20, 3, "BrainPad Radio");
 
@@ -34,27 +34,27 @@ namespace BrainRadio {
 
             BrainPad.Display.DrawSmallText(2, 55, "Volume:");
 
-            BrainPad.Display.ShowOnScreen();
+            BrainPad.Display.RefreshScreen();
         }
 
         public void BrainPadLoop() {
             if (BrainPad.Buttons.IsUpPressed()) {
                 currentStation = currentStation + 0.2;
 
-                BrainPad.Display.ClearPartOfScreen(13, 18, 128, 16);
+                BrainPad.Display.ClearPart(13, 18, 128, 16);
 
                 BrainPad.Display.DrawText(30, 25, currentStation.ToString("F1"));
 
-                BrainPad.Display.ShowOnScreen();
+                BrainPad.Display.RefreshScreen();
             }
             if (BrainPad.Buttons.IsDownPressed()) {
                 currentStation = currentStation - 0.2;
 
-                BrainPad.Display.ClearPartOfScreen(13, 18, 128, 16);
+                BrainPad.Display.ClearPart(13, 18, 128, 16);
 
                 BrainPad.Display.DrawText(30, 25, currentStation.ToString("F1"));
 
-                BrainPad.Display.ShowOnScreen();
+                BrainPad.Display.RefreshScreen();
             }
             if (BrainPad.Buttons.IsRightPressed()) {
                 if (volume >= 15) {
@@ -64,14 +64,14 @@ namespace BrainRadio {
                     volume = volume + 1;
                     volumeGraph = volumeGraph + 5;
 
-                    BrainPad.Display.ClearPartOfScreen(2, 55, 128, 8);
+                    BrainPad.Display.ClearPart(2, 55, 128, 8);
 
                     BrainPad.Display.DrawSmallText(2, 55, "Volume:");
 
                     for (int i = 55; i < 62; i++)
                         BrainPad.Display.DrawLine(44, i, 44 + volumeGraph, i);
 
-                    BrainPad.Display.ShowOnScreen();
+                    BrainPad.Display.RefreshScreen();
                 }
             }
             if (BrainPad.Buttons.IsLeftPressed()) {
@@ -82,14 +82,14 @@ namespace BrainRadio {
                     volume = volume - 1;
                     volumeGraph = volumeGraph - 5;
 
-                    BrainPad.Display.ClearPartOfScreen(2, 55, 128, 8);
+                    BrainPad.Display.ClearPart(2, 55, 128, 8);
 
                     BrainPad.Display.DrawSmallText(2, 55, "Volume:");
 
                     for (int i = 55; i < 62; i++)
                         BrainPad.Display.DrawLine(44, i, 44 + volumeGraph, i);
 
-                    BrainPad.Display.ShowOnScreen();
+                    BrainPad.Display.RefreshScreen();
                 }
             }
             if (currentStation == selectedStation) {
@@ -100,6 +100,18 @@ namespace BrainRadio {
                 selectedStation = currentStation;
             }
             radio.Volume = volume;
+        }
+    }
+
+    public static class Ext
+    {
+        public static void ClearPart(this GHIElectronics.TinyCLR.BrainPad.Display self, int x, int y, int width, int height)
+        {
+            if (x == 0 && y == 0 && width == BrainPad.Display.Width && height == BrainPad.Display.Height)
+                self.Clear();
+            for (var lx = x; lx < width + x; lx++)
+                for (var ly = y; ly < height + y; ly++)
+                    self.ClearPoint(lx, ly);
         }
     }
 }
