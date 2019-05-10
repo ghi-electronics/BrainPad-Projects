@@ -62,9 +62,9 @@ namespace ClassicFootball {
             while (true) {
 
                 if (BrainPad.Buttons.IsUpPressed()) {
-                    BrainPad.Display.ClearPartOfScreen(player.getX() - offset, player.getY() - offset, 6, 5);
+                    BrainPad.Display.ClearPart(player.getX() - offset, player.getY() - offset, 6, 5);
 
-                    BrainPad.Display.ShowOnScreen();
+                    BrainPad.Display.RefreshScreen();
 
                     player.setY(player.getY() - 10);
 
@@ -76,9 +76,9 @@ namespace ClassicFootball {
                 }
 
                 if (BrainPad.Buttons.IsDownPressed()) {
-                    BrainPad.Display.ClearPartOfScreen(player.getX() - offset, player.getY() - offset, 6, 5);
+                    BrainPad.Display.ClearPart(player.getX() - offset, player.getY() - offset, 6, 5);
 
-                    BrainPad.Display.ShowOnScreen();
+                    BrainPad.Display.RefreshScreen();
 
                     player.setY(player.getY() + 10);
 
@@ -90,7 +90,7 @@ namespace ClassicFootball {
                 }
 
                 if (BrainPad.Buttons.IsRightPressed()) {
-                    BrainPad.Display.ClearPartOfScreen(player.getX() - offset, player.getY() - offset, 6, 5);
+                    BrainPad.Display.ClearPart(player.getX() - offset, player.getY() - offset, 6, 5);
 
                     player.setX(player.getX() + 11);
 
@@ -115,9 +115,9 @@ namespace ClassicFootball {
 
                     //Returns the Player to the otherside of the of the field
                     if (player.getX() >= 110) {
-                        BrainPad.Display.ClearPartOfScreen(player.getX() - offset, player.getY() - offset, 6, 5);
+                        BrainPad.Display.ClearPart(player.getX() - offset, player.getY() - offset, 6, 5);
 
-                        BrainPad.Display.ShowOnScreen();
+                        BrainPad.Display.RefreshScreen();
 
                         player.setX(13);
 
@@ -126,9 +126,9 @@ namespace ClassicFootball {
                 }
 
                 if (BrainPad.Buttons.IsLeftPressed()) {
-                    BrainPad.Display.ClearPartOfScreen(player.getX() - offset, player.getY() - offset, 6, 5);
+                    BrainPad.Display.ClearPart(player.getX() - offset, player.getY() - offset, 6, 5);
 
-                    BrainPad.Display.ShowOnScreen();
+                    BrainPad.Display.RefreshScreen();
 
                     player.setX(player.getX() - 11);
 
@@ -178,7 +178,7 @@ namespace ClassicFootball {
             {
                 BrainPad.Display.DrawCircle(player.getX(), player.getY(), 2);
 
-                BrainPad.Display.ShowOnScreen();
+                BrainPad.Display.RefreshScreen();
             }
 
             void drawDefensePositions()
@@ -206,9 +206,9 @@ namespace ClassicFootball {
                             def1.setY(def1.getY() - 10);
 
                             if (isSpaceOpen()) {
-                                BrainPad.Display.ClearPartOfScreen(def1.getX(), def1.getY() + 10, 4, 2);
+                                BrainPad.Display.ClearPart(def1.getX(), def1.getY() + 10, 4, 2);
 
-                                BrainPad.Display.ShowOnScreen();
+                                BrainPad.Display.RefreshScreen();
 
                                 if (def1.getY() <= 32) {
                                     def1.setY(32);
@@ -225,9 +225,9 @@ namespace ClassicFootball {
                             def1.setX(def1.getX() + 11);
 
                             if (isSpaceOpen()) {
-                                BrainPad.Display.ClearPartOfScreen(def1.getX() - 11, def1.getY(), 4, 2);
+                                BrainPad.Display.ClearPart(def1.getX() - 11, def1.getY(), 4, 2);
 
-                                BrainPad.Display.ShowOnScreen();
+                                BrainPad.Display.RefreshScreen();
 
                                 if (def1.getX() >= 112) {
                                     def1.setX(112);
@@ -243,9 +243,9 @@ namespace ClassicFootball {
                             def1.setY(def1.getY() + 10);
 
                             if (isSpaceOpen()) {
-                                BrainPad.Display.ClearPartOfScreen(def1.getX(), def1.getY() - 10, 4, 2);
+                                BrainPad.Display.ClearPart(def1.getX(), def1.getY() - 10, 4, 2);
 
-                                BrainPad.Display.ShowOnScreen();
+                                BrainPad.Display.RefreshScreen();
 
                                 if (def1.getY() >= 52) {
                                     def1.setY(52);
@@ -261,9 +261,9 @@ namespace ClassicFootball {
                             def1.setX(def1.getX() - 11);
 
                             if (isSpaceOpen()) {
-                                BrainPad.Display.ClearPartOfScreen(def1.getX() + 11, def1.getY(), 4, 2);
+                                BrainPad.Display.ClearPart(def1.getX() + 11, def1.getY(), 4, 2);
 
-                                BrainPad.Display.ShowOnScreen();
+                                BrainPad.Display.RefreshScreen();
 
                                 if (def1.getX() <= 13) {
                                     def1.setX(13);
@@ -282,9 +282,9 @@ namespace ClassicFootball {
                             def2.setY(def2.getY() - 10);
 
                             if (isSpaceOpen()) {
-                                BrainPad.Display.ClearPartOfScreen(def2.getX(), def2.getY() + 10, 4, 2);
+                                BrainPad.Display.ClearPart(def2.getX(), def2.getY() + 10, 4, 2);
 
-                                BrainPad.Display.ShowOnScreen();
+                                BrainPad.Display.RefreshScreen();
 
                                 if (def2.getY() <= 32) {
                                     def2.setY(32);
@@ -301,9 +301,9 @@ namespace ClassicFootball {
                             def2.setX(def2.getX() + 11);
 
                             if (isSpaceOpen()) {
-                                BrainPad.Display.ClearPartOfScreen(def2.getX() - 11, def2.getY(), 4, 2);
+                                BrainPad.Display.ClearPart(def2.getX() - 11, def2.getY(), 4, 2);
 
-                                BrainPad.Display.ShowOnScreen();
+                                BrainPad.Display.RefreshScreen();
 
                                 if (def2.getX() >= 112) {
                                     def2.setX(112);
@@ -320,9 +320,9 @@ namespace ClassicFootball {
                             def2.setY(def2.getY() + 10);
 
                             if (isSpaceOpen()) {
-                                BrainPad.Display.ClearPartOfScreen(def2.getX(), def2.getY() - 10, 4, 2);
+                                BrainPad.Display.ClearPart(def2.getX(), def2.getY() - 10, 4, 2);
 
-                                BrainPad.Display.ShowOnScreen();
+                                BrainPad.Display.RefreshScreen();
 
                                 if (def2.getY() >= 52) {
                                     def2.setY(52);
@@ -339,9 +339,9 @@ namespace ClassicFootball {
                             def2.setX(def2.getX() - 11);
 
                             if (isSpaceOpen()) {
-                                BrainPad.Display.ClearPartOfScreen(def2.getX() + 11, def2.getY(), 4, 2);
+                                BrainPad.Display.ClearPart(def2.getX() + 11, def2.getY(), 4, 2);
 
-                                BrainPad.Display.ShowOnScreen();
+                                BrainPad.Display.RefreshScreen();
 
                                 if (def2.getX() <= 13) {
                                     def2.setX(13);
@@ -360,9 +360,9 @@ namespace ClassicFootball {
                             def3.setY(def3.getY() - 10);
 
                             if (isSpaceOpen()) {
-                                BrainPad.Display.ClearPartOfScreen(def3.getX(), def3.getY() + 10, 4, 2);
+                                BrainPad.Display.ClearPart(def3.getX(), def3.getY() + 10, 4, 2);
 
-                                BrainPad.Display.ShowOnScreen();
+                                BrainPad.Display.RefreshScreen();
 
                                 if (def3.getY() <= 32) {
                                     def3.setY(32);
@@ -379,9 +379,9 @@ namespace ClassicFootball {
                             def3.setX(def3.getX() + 11);
 
                             if (isSpaceOpen()) {
-                                BrainPad.Display.ClearPartOfScreen(def3.getX() - 11, def3.getY(), 4, 2);
+                                BrainPad.Display.ClearPart(def3.getX() - 11, def3.getY(), 4, 2);
 
-                                BrainPad.Display.ShowOnScreen();
+                                BrainPad.Display.RefreshScreen();
 
                                 if (def3.getX() >= 112) {
                                     def3.setX(112);
@@ -398,9 +398,9 @@ namespace ClassicFootball {
                             def3.setY(def3.getY() + 10);
 
                             if (isSpaceOpen()) {
-                                BrainPad.Display.ClearPartOfScreen(def3.getX(), def3.getY() - 10, 4, 2);
+                                BrainPad.Display.ClearPart(def3.getX(), def3.getY() - 10, 4, 2);
 
-                                BrainPad.Display.ShowOnScreen();
+                                BrainPad.Display.RefreshScreen();
 
                                 if (def3.getY() >= 52) {
                                     def3.setY(52);
@@ -418,9 +418,9 @@ namespace ClassicFootball {
                             def3.setX(def3.getX() - 11);
 
                             if (isSpaceOpen()) {
-                                BrainPad.Display.ClearPartOfScreen(def3.getX() + 11, def3.getY(), 4, 2);
+                                BrainPad.Display.ClearPart(def3.getX() + 11, def3.getY(), 4, 2);
 
-                                BrainPad.Display.ShowOnScreen();
+                                BrainPad.Display.RefreshScreen();
 
                                 if (def3.getX() <= 13) {
                                     def3.setX(13);
@@ -439,9 +439,9 @@ namespace ClassicFootball {
                             def4.setY(def4.getY() - 10);
 
                             if (isSpaceOpen()) {
-                                BrainPad.Display.ClearPartOfScreen(def4.getX(), def4.getY() + 10, 4, 2);
+                                BrainPad.Display.ClearPart(def4.getX(), def4.getY() + 10, 4, 2);
 
-                                BrainPad.Display.ShowOnScreen();
+                                BrainPad.Display.RefreshScreen();
 
                                 if (def4.getY() <= 32) {
                                     def4.setY(32);
@@ -458,9 +458,9 @@ namespace ClassicFootball {
                             def4.setX(def4.getX() + 11);
 
                             if (isSpaceOpen()) {
-                                BrainPad.Display.ClearPartOfScreen(def4.getX() - 11, def4.getY(), 4, 2);
+                                BrainPad.Display.ClearPart(def4.getX() - 11, def4.getY(), 4, 2);
 
-                                BrainPad.Display.ShowOnScreen();
+                                BrainPad.Display.RefreshScreen();
 
                                 if (def4.getX() >= 112) {
                                     def4.setX(112);
@@ -477,9 +477,9 @@ namespace ClassicFootball {
                             def4.setY(def4.getY() + 10);
 
                             if (isSpaceOpen()) {
-                                BrainPad.Display.ClearPartOfScreen(def4.getX(), def4.getY() - 10, 4, 2);
+                                BrainPad.Display.ClearPart(def4.getX(), def4.getY() - 10, 4, 2);
 
-                                BrainPad.Display.ShowOnScreen();
+                                BrainPad.Display.RefreshScreen();
 
                                 if (def4.getY() >= 52) {
                                     def4.setY(52);
@@ -497,9 +497,9 @@ namespace ClassicFootball {
                             def4.setX(def4.getX() - 11);
 
                             if (isSpaceOpen()) {
-                                BrainPad.Display.ClearPartOfScreen(def4.getX() + 11, def4.getY(), 4, 2);
+                                BrainPad.Display.ClearPart(def4.getX() + 11, def4.getY(), 4, 2);
 
-                                BrainPad.Display.ShowOnScreen();
+                                BrainPad.Display.RefreshScreen();
 
                                 if (def4.getX() <= 13) {
                                     def4.setX(13);
@@ -518,9 +518,9 @@ namespace ClassicFootball {
                             def5.setY(def5.getY() - 10);
 
                             if (isSpaceOpen()) {
-                                BrainPad.Display.ClearPartOfScreen(def5.getX(), def5.getY() + 10, 4, 2);
+                                BrainPad.Display.ClearPart(def5.getX(), def5.getY() + 10, 4, 2);
 
-                                BrainPad.Display.ShowOnScreen();
+                                BrainPad.Display.RefreshScreen();
 
                                 if (def5.getY() <= 32) {
                                     def5.setY(32);
@@ -537,9 +537,9 @@ namespace ClassicFootball {
                             def5.setX(def5.getX() + 11);
 
                             if (isSpaceOpen()) {
-                                BrainPad.Display.ClearPartOfScreen(def5.getX() - 11, def5.getY(), 4, 2);
+                                BrainPad.Display.ClearPart(def5.getX() - 11, def5.getY(), 4, 2);
 
-                                BrainPad.Display.ShowOnScreen();
+                                BrainPad.Display.RefreshScreen();
 
                                 if (def5.getX() >= 112) {
                                     def5.setX(112);
@@ -556,9 +556,9 @@ namespace ClassicFootball {
                             def5.setY(def5.getY() + 10);
 
                             if (isSpaceOpen()) {
-                                BrainPad.Display.ClearPartOfScreen(def5.getX(), def5.getY() - 10, 4, 2);
+                                BrainPad.Display.ClearPart(def5.getX(), def5.getY() - 10, 4, 2);
 
-                                BrainPad.Display.ShowOnScreen();
+                                BrainPad.Display.RefreshScreen();
 
                                 if (def5.getY() >= 52) {
                                     def5.setY(52);
@@ -576,9 +576,9 @@ namespace ClassicFootball {
                             def5.setX(def5.getX() - 11);
 
                             if (isSpaceOpen()) {
-                                BrainPad.Display.ClearPartOfScreen(def5.getX() + 11, def5.getY(), 4, 2);
+                                BrainPad.Display.ClearPart(def5.getX() + 11, def5.getY(), 4, 2);
 
-                                BrainPad.Display.ShowOnScreen();
+                                BrainPad.Display.RefreshScreen();
 
                                 if (def5.getX() <= 13) {
                                     def5.setX(13);
@@ -608,7 +608,7 @@ namespace ClassicFootball {
 
                 BrainPad.Display.DrawFilledRectangle(def5.getX(), def5.getY(), 4, 2);
 
-                BrainPad.Display.ShowOnScreen();
+                BrainPad.Display.RefreshScreen();
             }
 
             void checkForTouchDown()
@@ -618,7 +618,7 @@ namespace ClassicFootball {
                     if (possession == 1) {
                         player1Score = player1Score + 7;
 
-                        BrainPad.Display.ClearScreen();
+                        BrainPad.Display.Clear();
                         //Scoreboard
                         BrainPad.Display.DrawLine(30, 2, 98, 2);
 
@@ -640,7 +640,7 @@ namespace ClassicFootball {
 
                         BrainPad.Display.DrawSmallText(6, 50, "Any Button to Kick");
 
-                        BrainPad.Display.ShowOnScreen();
+                        BrainPad.Display.RefreshScreen();
 
                         if (sound) {
                             touchDownSong();
@@ -659,7 +659,7 @@ namespace ClassicFootball {
                     else {
                         player2Score = player2Score + 7;
 
-                        BrainPad.Display.ClearScreen();
+                        BrainPad.Display.Clear();
                         //Scoreboard
                         BrainPad.Display.DrawLine(30, 2, 98, 2);
 
@@ -681,7 +681,7 @@ namespace ClassicFootball {
 
                         BrainPad.Display.DrawSmallText(6, 50, "Any Button to Kick");
 
-                        BrainPad.Display.ShowOnScreen();
+                        BrainPad.Display.RefreshScreen();
 
                         if (sound) {
                             touchDownSong();
@@ -760,7 +760,7 @@ namespace ClassicFootball {
 
                 }
 
-                BrainPad.Display.ClearScreen();
+                BrainPad.Display.Clear();
 
                 drawScoreBoard();
 
@@ -871,7 +871,7 @@ namespace ClassicFootball {
             {
                 BrainPad.Display.DrawText(10, 35, "It's Good");
 
-                BrainPad.Display.ShowOnScreen();
+                BrainPad.Display.RefreshScreen();
 
                 if (sound) {
                     touchDownSong();
@@ -900,7 +900,7 @@ namespace ClassicFootball {
             {
                 BrainPad.Display.DrawText(28, 35, "No Good!");
 
-                BrainPad.Display.ShowOnScreen();
+                BrainPad.Display.RefreshScreen();
 
                 if (sound) {
                     BrainPad.Buzzer.StartBuzzing(100);
@@ -916,7 +916,7 @@ namespace ClassicFootball {
 
                 BrainPad.Wait.Seconds(2);
 
-                BrainPad.Display.ClearScreen();
+                BrainPad.Display.Clear();
 
                 if (possession == 1)
                     possession = 2;
@@ -938,15 +938,15 @@ namespace ClassicFootball {
             void drawScoreBoard()
             {
                 //Clears PlayerOne Score
-                BrainPad.Display.ClearPartOfScreen(6, 4, 10, 10);
+                BrainPad.Display.ClearPart(6, 4, 10, 10);
                 //Clears PlayerTwo Score
-                BrainPad.Display.ClearPartOfScreen(103, 4, 10, 10);
+                BrainPad.Display.ClearPart(103, 4, 10, 10);
 
-                BrainPad.Display.ClearPartOfScreen(59, 13, 10, 10);
+                BrainPad.Display.ClearPart(59, 13, 10, 10);
 
-                BrainPad.Display.ClearPartOfScreen(35, 8, 10, 10);
+                BrainPad.Display.ClearPart(35, 8, 10, 10);
 
-                BrainPad.Display.ClearPartOfScreen(84, 8, 12, 10);
+                BrainPad.Display.ClearPart(84, 8, 12, 10);
                 //Draws Box around Player who controls the ball. 
                 if (possession == 1) {
                     BrainPad.Display.DrawLine(1, 1, 28, 1);
@@ -990,27 +990,27 @@ namespace ClassicFootball {
 
                 if (yardLine >= 50) {
                     // Clears the direction >
-                    BrainPad.Display.ClearPartOfScreen(52, 13, 30, 8);
+                    BrainPad.Display.ClearPart(52, 13, 30, 8);
 
-                    BrainPad.Display.ShowOnScreen();
+                    BrainPad.Display.RefreshScreen();
 
                     pastMidField = true;
                 }
                 else {
 
                     if (pastMidField) {
-                        BrainPad.Display.ClearPartOfScreen(71, 13, 8, 8);
+                        BrainPad.Display.ClearPart(71, 13, 8, 8);
                         //Position Marker
                         BrainPad.Display.DrawScaledText(71, 13, ">", 1, 1);
 
-                        BrainPad.Display.ShowOnScreen();
+                        BrainPad.Display.RefreshScreen();
                     }
                     else {
-                        BrainPad.Display.ClearPartOfScreen(52, 13, 15, 8);
+                        BrainPad.Display.ClearPart(52, 13, 15, 8);
                         //Position Marker
                         BrainPad.Display.DrawScaledText(52, 13, "<", 1, 1);
 
-                        BrainPad.Display.ShowOnScreen();
+                        BrainPad.Display.RefreshScreen();
                     }
                 }
 
@@ -1028,7 +1028,7 @@ namespace ClassicFootball {
                 else
                     BrainPad.Display.DrawScaledText(87, 8, "" + YTG, 1, 1);
 
-                BrainPad.Display.ShowOnScreen();
+                BrainPad.Display.RefreshScreen();
             }
 
             void isPlayerTackled()
@@ -1075,7 +1075,7 @@ namespace ClassicFootball {
                     return;
                 }
                 else if (down == 4) {
-                    BrainPad.Display.ClearScreen();
+                    BrainPad.Display.Clear();
                     //Scoreboard
                     BrainPad.Display.DrawLine(30, 2, 98, 2);
 
@@ -1097,14 +1097,14 @@ namespace ClassicFootball {
 
                     BrainPad.Display.DrawSmallText(5, 50, "Punt/L Kick/U Run/R");
 
-                    BrainPad.Display.ShowOnScreen();
+                    BrainPad.Display.RefreshScreen();
 
                     while (true) {
                         //Going for it on 4th down -- RUN
                         if (BrainPad.Buttons.IsRightPressed()) {
-                            BrainPad.Display.ClearScreen();
+                            BrainPad.Display.Clear();
 
-                            BrainPad.Display.ShowOnScreen();
+                            BrainPad.Display.RefreshScreen();
 
                             drawScoreBoard();
 
@@ -1114,8 +1114,8 @@ namespace ClassicFootball {
                         }
 
                         if (BrainPad.Buttons.IsLeftPressed()) {
-                            BrainPad.Display.ClearScreen();
-                            BrainPad.Display.ShowOnScreen();
+                            BrainPad.Display.Clear();
+                            BrainPad.Display.RefreshScreen();
 
                             kickOff();
 
@@ -1127,9 +1127,9 @@ namespace ClassicFootball {
                         }
 
                         if (BrainPad.Buttons.IsUpPressed()) {
-                            BrainPad.Display.ClearScreen();
+                            BrainPad.Display.Clear();
 
-                            BrainPad.Display.ShowOnScreen();
+                            BrainPad.Display.RefreshScreen();
 
                             tryFieldGoal();
 
@@ -1140,19 +1140,19 @@ namespace ClassicFootball {
                 else if (down > 4) {
 
                     while (true) {
-                        BrainPad.Display.ClearScreen();
+                        BrainPad.Display.Clear();
 
                         BrainPad.Display.DrawText(25, 15, "Change");
 
                         BrainPad.Display.DrawText(20, 40, "Possesion");
 
-                        BrainPad.Display.ShowOnScreen();
+                        BrainPad.Display.RefreshScreen();
 
                         BrainPad.Wait.Seconds(3);
 
-                        BrainPad.Display.ClearScreen();
+                        BrainPad.Display.Clear();
 
-                        BrainPad.Display.ShowOnScreen();
+                        BrainPad.Display.RefreshScreen();
 
                         if (possession == 1)
                             possession = 2;
@@ -1250,22 +1250,22 @@ namespace ClassicFootball {
                     }
                 }
 
-                BrainPad.Display.ShowOnScreen();
+                BrainPad.Display.RefreshScreen();
             }
 
             void resetPlay()
             {
-                BrainPad.Display.ClearPartOfScreen(player.getX() - offset, player.getY() - offset, 6, 5);
+                BrainPad.Display.ClearPart(player.getX() - offset, player.getY() - offset, 6, 5);
 
-                BrainPad.Display.ClearPartOfScreen(def1.getX(), def1.getY(), 4, 2);
+                BrainPad.Display.ClearPart(def1.getX(), def1.getY(), 4, 2);
 
-                BrainPad.Display.ClearPartOfScreen(def2.getX(), def2.getY(), 4, 2);
+                BrainPad.Display.ClearPart(def2.getX(), def2.getY(), 4, 2);
 
-                BrainPad.Display.ClearPartOfScreen(def3.getX(), def3.getY(), 4, 2);
+                BrainPad.Display.ClearPart(def3.getX(), def3.getY(), 4, 2);
 
-                BrainPad.Display.ClearPartOfScreen(def4.getX(), def4.getY(), 4, 2);
+                BrainPad.Display.ClearPart(def4.getX(), def4.getY(), 4, 2);
 
-                BrainPad.Display.ClearPartOfScreen(def5.getX(), def5.getY(), 4, 2);
+                BrainPad.Display.ClearPart(def5.getX(), def5.getY(), 4, 2);
 
                 player.setX(13);
 
@@ -1303,7 +1303,7 @@ namespace ClassicFootball {
 
                 BrainPad.Display.DrawFilledRectangle(def5.getX(), def5.getY(), 4, 2);
 
-                BrainPad.Display.ShowOnScreen();
+                BrainPad.Display.RefreshScreen();
 
                 BrainPad.Wait.Seconds(2);
             }
@@ -1473,7 +1473,7 @@ namespace ClassicFootball {
 
                 BrainPad.Display.DrawLine(80, 2, 80, 21);
 
-                BrainPad.Display.ShowOnScreen();
+                BrainPad.Display.RefreshScreen();
             }
         }
 
