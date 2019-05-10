@@ -27,14 +27,14 @@ namespace BrainTouchPiano {
             if (menu.Length > 7)
                 throw new System.Exception("Max menu size is 6!");
 
-            BrainPad.Display.ClearScreen();
+            BrainPad.Display.Clear();
 
             for (int i = 0; i < menu.Length; i++)
                 BrainPad.Display.DrawScaledText(12, 9 * i, menu[i], 1, 1);
 
             BrainPad.Display.DrawScaledText(0, 64 - 8, "R = Select   L = Exit", 1, 1);
 
-            BrainPad.Display.ShowOnScreen();
+            BrainPad.Display.RefreshScreen();
 
             while (true) {
                 if (BrainPad.Buttons.IsDownPressed() || selection == -1) {
@@ -53,7 +53,7 @@ namespace BrainTouchPiano {
 
                     BrainPad.Display.DrawScaledText(0, selection * 9, ">", 2, 1);
 
-                    BrainPad.Display.ShowOnScreen();
+                    BrainPad.Display.RefreshScreen();
 
                     while (BrainPad.Buttons.IsDownPressed())
                         BrainPad.Wait.Minimum();
@@ -74,7 +74,7 @@ namespace BrainTouchPiano {
 
                     BrainPad.Display.DrawScaledText(0, selection * 9, ">", 2, 1);
 
-                    BrainPad.Display.ShowOnScreen();
+                    BrainPad.Display.RefreshScreen();
 
                     while (BrainPad.Buttons.IsUpPressed())
                         BrainPad.Wait.Minimum();

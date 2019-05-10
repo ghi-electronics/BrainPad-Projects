@@ -26,7 +26,7 @@ namespace BrainTouchPiano {
         static public void Run() {
             Click.ClampTouch.TouchClamp touch = new Click.ClampTouch.TouchClamp();
 
-            BrainPad.Display.ClearScreen();
+            BrainPad.Display.Clear();
 
             drawKeyBoard();
 
@@ -124,26 +124,26 @@ namespace BrainTouchPiano {
 
                     default:
                         //Clears the display when the notes aren't playing
-                        BrainPad.Display.ClearPartOfScreen(12, 55, 5, 8);
+                        BrainPad.Display.ClearPart(12, 55, 5, 8);
 
-                        BrainPad.Display.ClearPartOfScreen(29, 55, 5, 8);
+                        BrainPad.Display.ClearPart(29, 55, 5, 8);
 
-                        BrainPad.Display.ClearPartOfScreen(38, 55, 5, 8);
+                        BrainPad.Display.ClearPart(38, 55, 5, 8);
 
-                        BrainPad.Display.ClearPartOfScreen(38, 44, 5, 8);
+                        BrainPad.Display.ClearPart(38, 44, 5, 8);
 
-                        BrainPad.Display.ClearPartOfScreen(47, 44, 5, 8);
+                        BrainPad.Display.ClearPart(47, 44, 5, 8);
 
-                        BrainPad.Display.ClearPartOfScreen(47, 55, 5, 8);
+                        BrainPad.Display.ClearPart(47, 55, 5, 8);
 
-                        BrainPad.Display.ClearPartOfScreen(65, 55, 5, 8);
+                        BrainPad.Display.ClearPart(65, 55, 5, 8);
 
-                        BrainPad.Display.ClearPartOfScreen(75, 55, 5, 8);
+                        BrainPad.Display.ClearPart(75, 55, 5, 8);
 
                         break;
                 }
 
-                BrainPad.Display.ShowOnScreen();
+                BrainPad.Display.RefreshScreen();
             }
             
             void drawKeyBoard() {
@@ -301,13 +301,13 @@ namespace BrainTouchPiano {
 
                 BrainPad.Display.DrawLine(0, 63, 128, 63);
 
-                BrainPad.Display.ShowOnScreen();
+                BrainPad.Display.RefreshScreen();
 
                 //Adds Banner
 
                 BrainPad.Display.DrawText(0, 0, " Key of Dm  ");
 
-                BrainPad.Display.ShowOnScreen();
+                BrainPad.Display.RefreshScreen();
             }            
         }       
     }

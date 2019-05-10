@@ -93,9 +93,8 @@ namespace Click.ClampTouch {
 
             var settings = new I2cConnectionSettings(MPR121WriteAddress >> 1) {
                 BusSpeed = I2cBusSpeed.FastMode,
-                SharingMode = I2cSharingMode.Shared
             };
-            this.i2cBus = I2cDevice.FromId(BrainPad.Expansion.I2cBus.I2c1, settings);
+            this.i2cBus = I2cController.FromName(BrainPadBP2.I2cBus.I2c1).GetDevice(settings);
 
             configure();
             
