@@ -25,7 +25,7 @@ namespace BrainRadio {
 
             radio.Channel = currentStation;
             radio.Volume = volume;
-            
+
             BrainPad.Display.Clear();
 
             BrainPad.Display.DrawSmallText(20, 3, "BrainPad Radio");
@@ -100,18 +100,6 @@ namespace BrainRadio {
                 selectedStation = currentStation;
             }
             radio.Volume = volume;
-        }
-    }
-
-    public static class Ext
-    {
-        public static void ClearPart(this GHIElectronics.TinyCLR.BrainPad.Display self, int x, int y, int width, int height)
-        {
-            if (x == 0 && y == 0 && width == BrainPad.Display.Width && height == BrainPad.Display.Height)
-                self.Clear();
-            for (var lx = x; lx < width + x; lx++)
-                for (var ly = y; ly < height + y; ly++)
-                    self.ClearPoint(lx, ly);
         }
     }
 }
