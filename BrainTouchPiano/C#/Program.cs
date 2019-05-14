@@ -35,8 +35,8 @@ namespace BrainTouchPiano {
                     keyEm.Run();
 
                     break;
-                case 6: 
-                        BrainPad.Display.ClearScreen();
+                case 6:
+                        BrainPad.Display.Clear();
                         switch (Menu.Show(new string[] { "Fm Blues Scale", "F#m Blues Scale ", "Gm Blues Scale", "Am Blues Scale", "Bm Blues Scale", "back" })) {
                             case 1:
                                 keyFm.Run();
@@ -61,7 +61,7 @@ namespace BrainTouchPiano {
                             case 6:
                                 break;
                         }
-                        break;                 
+                        break;
             }
         }
     }

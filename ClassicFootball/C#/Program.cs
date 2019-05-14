@@ -14,20 +14,20 @@ namespace ClassicFootball {
         }
 
         public void BrainPadLoop() {
-            
+
             switch (Menu.Show(new string[] { "Football", "No Sound" })) {
                 case 1:
-                    BrainPad.Display.ClearScreen();
+                    BrainPad.Display.Clear();
 
-                    BrainPad.Display.ShowOnScreen();
+                    BrainPad.Display.RefreshScreen();
 
                     Football.Run(true);
 
                     break;
                 case 2:
-                    BrainPad.Display.ClearScreen();
+                    BrainPad.Display.Clear();
 
-                    BrainPad.Display.ShowOnScreen();
+                    BrainPad.Display.RefreshScreen();
 
                     Football.Run(false);
 

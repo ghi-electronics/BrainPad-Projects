@@ -460,7 +460,7 @@ namespace TiltMaze {
         }
 
         void resetPlayer() {
-            BrainPad.Display.ClearPartOfScreen(getX(), getY(), 3, 3);
+            BrainPad.Display.ClearPart(getX(), getY(), 3, 3);
 
             posX = 23;
             posY = 21;
