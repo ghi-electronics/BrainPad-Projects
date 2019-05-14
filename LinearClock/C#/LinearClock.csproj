@@ -49,12 +49,6 @@
     <Reference Include="GHIElectronics.TinyCLR.Devices.Adc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\GHIElectronics.TinyCLR.Devices.Adc.1.0.0\lib\net452\GHIElectronics.TinyCLR.Devices.Adc.dll</HintPath>
     </Reference>
-    <Reference Include="GHIElectronics.TinyCLR.Devices.Can, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\GHIElectronics.TinyCLR.Devices.Can.1.0.0\lib\net452\GHIElectronics.TinyCLR.Devices.Can.dll</HintPath>
-    </Reference>
-    <Reference Include="GHIElectronics.TinyCLR.Devices.Dac, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\GHIElectronics.TinyCLR.Devices.Dac.1.0.0\lib\net452\GHIElectronics.TinyCLR.Devices.Dac.dll</HintPath>
-    </Reference>
     <Reference Include="GHIElectronics.TinyCLR.Devices.Display, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\GHIElectronics.TinyCLR.Devices.Display.1.0.0\lib\net452\GHIElectronics.TinyCLR.Devices.Display.dll</HintPath>
     </Reference>
@@ -67,17 +61,8 @@
     <Reference Include="GHIElectronics.TinyCLR.Devices.Pwm, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\GHIElectronics.TinyCLR.Devices.Pwm.1.0.0\lib\net452\GHIElectronics.TinyCLR.Devices.Pwm.dll</HintPath>
     </Reference>
-    <Reference Include="GHIElectronics.TinyCLR.Devices.Rtc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\GHIElectronics.TinyCLR.Devices.Rtc.1.0.0\lib\net452\GHIElectronics.TinyCLR.Devices.Rtc.dll</HintPath>
-    </Reference>
-    <Reference Include="GHIElectronics.TinyCLR.Devices.Signals, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\GHIElectronics.TinyCLR.Devices.Signals.1.0.0\lib\net452\GHIElectronics.TinyCLR.Devices.Signals.dll</HintPath>
-    </Reference>
     <Reference Include="GHIElectronics.TinyCLR.Devices.Spi, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\GHIElectronics.TinyCLR.Devices.Spi.1.0.0\lib\net452\GHIElectronics.TinyCLR.Devices.Spi.dll</HintPath>
-    </Reference>
-    <Reference Include="GHIElectronics.TinyCLR.Devices.Storage, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\GHIElectronics.TinyCLR.Devices.Storage.1.0.0\lib\net452\GHIElectronics.TinyCLR.Devices.Storage.dll</HintPath>
     </Reference>
     <Reference Include="GHIElectronics.TinyCLR.Devices.Uart, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\GHIElectronics.TinyCLR.Devices.Uart.1.0.0\lib\net452\GHIElectronics.TinyCLR.Devices.Uart.dll</HintPath>
