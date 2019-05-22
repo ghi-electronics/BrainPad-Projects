@@ -18,17 +18,18 @@ namespace LinearClock {
             bool ok = false;
 
             var i2cSettings = new I2cConnectionSettings(0b01101111) {
-                SharingMode = I2cSharingMode.Shared,
                 BusSpeed = I2cBusSpeed.FastMode,
             };
-            var realTimeClock = I2cDevice.FromId(GHIElectronics.TinyCLR.Pins.BrainPad.Expansion.I2cBus.I2c1, i2cSettings);
+            var realTimeClock = I2cController.FromName(GHIElectronics.TinyCLR.Pins.BrainPadBP2.I2cBus.I2c1).GetDevice(i2cSettings);
 
-            var spiSettings = new SpiConnectionSettings(GHIElectronics.TinyCLR.Pins.BrainPad.Expansion.GpioPin.Cs) {
+            var spiSettings = new SpiConnectionSettings() {
+                ChipSelectType = SpiChipSelectType.Gpio,
+                ChipSelectLine = GHIElectronics.TinyCLR.Pins.BrainPad.Expansion.GpioPin.Cs,
                 Mode = SpiMode.Mode0,
                 ClockFrequency = 20000000,
                 DataBitLength = 8,
             };
-            var ledStrip = SpiDevice.FromId(GHIElectronics.TinyCLR.Pins.BrainPad.Expansion.SpiBus.Spi1, spiSettings);
+            var ledStrip = SpiController.FromName(GHIElectronics.TinyCLR.Pins.BrainPadBP2.SpiBus.Spi1).GetDevice(spiSettings);
 
             while (true) {
                 i2cReadData[0] = (0x00);
